@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  height: 100%;
+  width: 100%;
+  background: #eee;
+  font-family: "PT Sans", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.Link {
+  text-decoration: none;
   color: white;
+  font-weight: 1000;
 }
 
-.App-link {
-  color: #61dafb;
+.LinkButton {
+  text-decoration: none;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
+@keyframes spinner {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
+  }
+}
+
+.spinner-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #383636; /* Black */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+.demo {
+  width: 100%;
+  height: 100%;
+}
+
+.penName {
+  text-align: center;
+  font-size: 36px;
+}
+
+.mainCard {
+  text-align: center;
+  display: block;
+  margin: 30px auto;
+  background-color: white;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  animation-name: mainCard;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: both;
+}
+
+@keyframes mainCard {
+  0% {
+    transform: scale(0);
+  }
+}
+
+.mainCardHeader {
+  background-color: AQUAMARINE;
+  width: 200px;
+  height: 200px;
+  object-fit: fill;
+  animation-name: mainCardHeader;
+  animation-duration: 0.4s;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes mainCardHeader {
+  0% {
+    transform: scaleY(0);
+  }
+}
+
+.mainCardContent {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: -50px;
+  height: 100%;
+  width: 100%;
+}
+
+.miniCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+  margin: 0 20px 20px 0;
+  background-color: white;
+  height: 200px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation-name: miniCard;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: both;
+}
+
+@keyframes miniCard {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.miniCard1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+  margin: 0 20px 0px 0;
+  background-color: white;
+  height: 200px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation-name: miniCard;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: both;
+}
+
+@keyframes miniCard {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
