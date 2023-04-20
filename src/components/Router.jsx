@@ -5,8 +5,8 @@ import Home from "../pages/Home.jsx";
 import LeafNFT from "../pages/LeafNFT.jsx";
 import MyCreatedLeaf from "../pages/MyCretedLeaf.jsx";
 import MarketPlace from "../pages/MarketPlace.jsx";
-import ResaleNFT from "../pages/ResaleNFT.jsx";
 import MYNFT from "../pages/MYNFT.jsx";
+import CreateIdea from "../pages/CreateIdea.jsx";
 
 const Router = () => {
   return (
@@ -17,8 +17,8 @@ const Router = () => {
         <Route path="/leafnft" element={<LeafNFT />} />
         <Route path="/createleaf" element={<MyCreatedLeaf />} />
         <Route path="/marketplace" element={<MarketPlace />} />
-        <Route path="/resalenft" element={<ResaleNFT />} />
         <Route path="/mynft" element={<MYNFT />} />
+        <Route path="/createidea" element={<CreateIdea />} />
       </Routes>
     </>
   );

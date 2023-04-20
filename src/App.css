@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=DynaPuff:wght@400;700&display=swap');
+
+/* font-family: 'Dongle', sans-serif;
+font-family: 'DynaPuff', cursive; */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -61,7 +66,7 @@ body {
 .mainCard {
   text-align: center;
   display: block;
-  margin: 30px auto;
+  margin: 15px auto;
   background-color: white;
   box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
   width: 90%;
@@ -120,17 +125,6 @@ body {
   animation-fill-mode: both;
 }
 
-@keyframes miniCard {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
 
 .miniCard1 {
@@ -149,6 +143,42 @@ body {
   animation-delay: 0.8s;
   animation-fill-mode: both;
 }
+
+
+.miniCard2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px ;
+  margin: 0 20px 20px 0;
+  background-color: white;
+  height: 240px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation-name: miniCard;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: both;
+}
+
+.miniCard3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+  margin: 0 20px 0px 0;
+  background-color: white;
+  height: 230px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation-name: miniCard;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: both;
+}
+
 
 @keyframes miniCard {
   0% {

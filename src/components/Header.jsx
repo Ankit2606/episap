@@ -17,14 +17,14 @@ import { WebThreeContext } from "../utils/ContextContract.jsx";
 import ronaldo from "../assets/images/ronaldo.jpg"
 import { useAuth0 } from "@auth0/auth0-react";
 
+const fontfamily= "'DynaPuff', cursive";
+
 const pages = [
+  { Page: "CreateIdea", link: "/createidea" },
   { Page: "LeafNFT", link: "/leafnft" },
-  { Page: "MyCreatedLeaf", link: "/createleaf" },
   { Page: "MarketPlace", link: "/marketplace" },
-  { Page: "ResaleNFT", link: "/resalenft" },
-  { Page: "MYNFT", link: "/mynft" },
 ];
-const settings = ["Profile", "Account", "Dashboard"];
+const settings = [{ Page: "MyCreatedLeaf", link: "/createleaf" },{ Page: "MYNFT", link: "/mynft" },];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -58,6 +58,8 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* <img style={{ display: { xs: "none", md: "flex" }, mr: 1 }} src={panda} alt="panda" /> */}
+
           <Typography
             variant="h6"
             noWrap
@@ -66,11 +68,11 @@ function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".1rem",
               color: "inherit",
               textDecoration: "none",
+              fontFamily:fontfamily
             }}
           >
             EPISAPIENT
@@ -108,7 +110,7 @@ function ResponsiveAppBar() {
               {pages.map((p, i) => (
                 <MenuItem key={i} onClick={handleCloseNavMenu}>
                   <Link to={p.link} className="Link">
-                    <Typography textAlign="center" sx={{ color: "black" }}>
+                    <Typography textAlign="center" sx={{ color: "black",fontFamily:fontfamily }}>
                       {p.Page}
                     </Typography>
                   </Link>
@@ -116,12 +118,12 @@ function ResponsiveAppBar() {
               ))}
               {!account?<Button
               onClick={connectWallet}
-              sx={{ my: 2, color: "orange", display: "block", fontWeight: 700 ,marginLeft:"10px"}}
+              sx={{ my: 2, color: "orange", display: "block", fontWeight: 700 ,marginLeft:"10px",fontFamily:fontfamily}}
             >
               Connect
             </Button>:<Button
               onClick={connectWallet}
-              sx={{ my: 0, color: "orange", display: "block", fontWeight: 700 ,marginLeft:"10px"}}
+              sx={{ my: 0, color: "orange", display: "block", fontWeight: 700 ,marginLeft:"10px",fontFamily:fontfamily}}
             >
               {Address}
             </Button>}
@@ -130,6 +132,8 @@ function ResponsiveAppBar() {
             
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <img style={{ display: { xs: "flex", md: "none" }, mr: 1 }} src={panda} alt="panda" /> */}
+
           <Typography
             variant="h5"
             noWrap
@@ -139,7 +143,7 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              fontFamily:fontfamily,
               fontWeight: 700,
               letterSpacing: ".1rem",
               color: "inherit",
@@ -159,6 +163,10 @@ function ResponsiveAppBar() {
                     color: "white",
                     display: "block",
                     fontWeight: 700,
+                    fontFamily:fontfamily
+                    ,fontSize:"17px",
+                    letterSpacing:'1px'
+
                   }}
                 >
                   {p.Page}
@@ -167,11 +175,11 @@ function ResponsiveAppBar() {
             ))}
             {!account?<Button
               onClick={connectWallet}
-              sx={{ my: 2, color: "orange", display: "block", fontWeight: 700 }}
+              sx={{ my: 2, color: "orange", display: "block", fontWeight: 700,fontFamily:fontfamily }}
             >
               Connect
             </Button>:<Button
-              sx={{ my: 2, color: "orange", display: "block", fontWeight: 700,cursor:"default"}}
+              sx={{ my: 2, color: "orange", display: "block", fontWeight: 700,cursor:"default",fontFamily:fontfamily}}
             >
               {Address}
             </Button>}
@@ -203,16 +211,16 @@ function ResponsiveAppBar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Link to={setting.link} className="Link"><Typography textAlign="center" sx={{color: "black",fontFamily:fontfamily}}>{setting.Page}</Typography></Link>
                 </MenuItem>
               ))}
               {!isAuthenticated?<Button
               onClick={() => loginWithRedirect()}
-              sx={{ my: 2, color: "orange", display: "block", fontWeight: 700,marginLeft:"8px" }}
+              sx={{ my: 2, color: "orange", display: "block", fontWeight: 700,marginLeft:"8px",fontFamily:fontfamily }}
             >
               LogIn
             </Button>:<Button
-              sx={{ my: 2, color: "orange", display: "block", fontWeight: 700,marginLeft:"8px"}}
+              sx={{ my: 2, color: "orange", display: "block", fontWeight: 700,marginLeft:"8px",fontFamily:fontfamily}}
               onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
             >
               LogOut

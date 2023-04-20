@@ -4,7 +4,8 @@ import Web3Modal from "web3modal";
 import { providerOptions } from "./providerOptions";
 import NFTAbi from "../utils/ABI/NFT.json";
 import MarketAbi from "../utils/ABI/NFTMarketPlace.json";
-import { NFTContractAddress, NFTMarketPlaceAddress } from "./ContractAddress";
+import Tokenabi from "../utils/ABI/token.json";
+import { NFTContractAddress, NFTMarketPlaceAddress,TokenAddress } from "./ContractAddress";
 
 export const WebThreeContext = createContext();
 
@@ -13,6 +14,7 @@ const ContextContract = ({ children }) => {
   const [balance, setbalance] = useState();
   const [NFTContract, setNFTContract] = useState();
   const [NFTMarket, setNFTMarket] = useState();
+  const [tokenContract, settokenContract] = useState();
 
   const connectWallet = async () => {
     const chainId = {mainnet:137,testnet:80001}; // Polygon Mainnet
@@ -45,6 +47,13 @@ const ContextContract = ({ children }) => {
     );
     setNFTContract(nftContract);
 
+    const tokencontract = new ethers.Contract(
+      TokenAddress,
+      Tokenabi.abi,
+      signer
+    );
+    settokenContract(tokencontract);
+
     const nftMarket = new ethers.Contract(
       NFTMarketPlaceAddress,
       MarketAbi.abi,
@@ -56,7 +65,7 @@ const ContextContract = ({ children }) => {
   return (
     <>
       <WebThreeContext.Provider
-        value={{ connectWallet, account, balance, NFTContract, NFTMarket }}
+        value={{ connectWallet, account, balance, NFTContract, NFTMarket,tokenContract }}
       >
         <div>{children}</div>
       </WebThreeContext.Provider>

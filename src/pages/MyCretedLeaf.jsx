@@ -8,8 +8,7 @@ import axios from "axios";
 import LoadingSpinner from "../utils/Spinner";
 import { Grid } from "@mui/material";
 
-
-
+const fontfamily= "'DynaPuff', cursive";
 
 const MyCreatedLeaf = () => {
 
@@ -71,29 +70,29 @@ const MyCreatedLeaf = () => {
 
                 <CardContent className="miniCard1">
                   <Typography gutterBottom variant="body1" component="div">
-                    <span style={{ fontWeight: 900 }}>LeafID</span> :{" "}
-                    {nft.tokenId}
+                    <span style={{ fontWeight: 900,fontFamily:fontfamily }}>LeafID</span> :
+                    <span style={{fontFamily:"fantasy",fontSize:"17px",padding:"0px"}}> {nft.tokenId}</span>
                   </Typography>
                   <Typography gutterBottom variant="body1" component="div">
-                    <span style={{ fontWeight: 900 }}>ParentId</span> :{" "}
-                    {nft.parentId}
+                    <span style={{ fontWeight: 900,fontFamily:fontfamily }}>ParentId</span> :
+                    <span style={{fontFamily:"fantasy",fontSize:"17px",padding:"0px"}}> {nft.parentId}</span>
                   </Typography>
 
                   <Typography gutterBottom variant="body1" component="div">
-                    <span style={{ fontWeight: 900 }}>Name</span> : {nft.name}
+                    <span style={{ fontWeight: 900,fontFamily:fontfamily }}>Name</span> : <span style={{fontFamily:"fantasy",fontSize:"17px",padding:"0px"}}> {nft.name}</span>
                   </Typography>
 
                   <Typography variant="body2" color="text.secondary">
-                    <span style={{ fontWeight: 700 }}>Description</span> :{" "}
-                    {nft.description}
+                    <span style={{ fontWeight: 700,fontFamily:fontfamily }}>Description</span> :
+                    <span style={{fontFamily:"fantasy",fontSize:"17px",padding:"0px"}}> {nft.description}</span>
                   </Typography>
                   <Typography
                     variant="body2"
                     color="text.secondary"
                     sx={{ marginTop: "7px" }}
                   >
-                    <span style={{ fontWeight: 700 }}>Acknowledge</span> :{" "}
-                    {nft.acknowledge}
+                    <span style={{ fontWeight: 700,fontFamily:fontfamily }}>Acknowledge</span> :
+                    <span style={{fontFamily:"fantasy",fontSize:"17px",padding:"0px"}}> {nft.acknowledge}</span>
                   </Typography>
                 </CardContent>
               </Card>
